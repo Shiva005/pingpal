@@ -76,36 +76,39 @@ class _DashboardPageState extends State<DashboardPage> {
   Widget _buildNavItem(IconData icon, String label, int index) {
     final bool isActive = _selectedIndex == index;
 
-    return GestureDetector(
+    return InkWell(
       onTap: () => _onItemTapped(index),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          AnimatedContainer(
-            duration: const Duration(milliseconds: 200),
-            padding: EdgeInsets.all(isActive ? 10 : 8),
-            decoration: BoxDecoration(
-              color: isActive
-                  ? AppTheme.primaryBlue.withOpacity(0.15)
-                  : Colors.transparent,
-              borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadius.circular(12),
+      child: SizedBox(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              padding: EdgeInsets.all(isActive ? 10 : 8),
+              decoration: BoxDecoration(
+                color: isActive
+                    ? AppTheme.primaryBlue.withOpacity(0.15)
+                    : Colors.transparent,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: FaIcon(
+                icon,
+                size: 20,
+                color: isActive ? AppTheme.primaryBlue : AppTheme.textGray,
+              ),
             ),
-            child: FaIcon(
-              icon,
-              size: 20,
-              color: isActive ? AppTheme.primaryBlue : AppTheme.textGray,
+            const SizedBox(height: 4),
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 11,
+                fontWeight: isActive ? FontWeight.w600 : FontWeight.w400,
+                color: isActive ? AppTheme.primaryBlue : AppTheme.textGray,
+              ),
             ),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            label,
-            style: TextStyle(
-              fontSize: 11,
-              fontWeight: isActive ? FontWeight.w600 : FontWeight.w400,
-              color: isActive ? AppTheme.primaryBlue : AppTheme.textGray,
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

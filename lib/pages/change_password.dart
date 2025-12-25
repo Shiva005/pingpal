@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import '../theme/app_theme.dart';
 
 class ChangePasswordPage extends StatefulWidget {
@@ -10,9 +11,11 @@ class ChangePasswordPage extends StatefulWidget {
 }
 
 class _ChangePasswordPageState extends State<ChangePasswordPage> {
-  final TextEditingController _currentPasswordController = TextEditingController();
+  final TextEditingController _currentPasswordController =
+      TextEditingController();
   final TextEditingController _newPasswordController = TextEditingController();
-  final TextEditingController _confirmPasswordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
 
   bool _obscureCurrentPassword = true;
   bool _obscureNewPassword = true;
@@ -105,7 +108,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                   const Expanded(
                     child: Center(
                       child: Text(
-                        'Change Password',
+                        'Secure your account',
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w700,
@@ -125,27 +128,6 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Header Text
-                    const Text(
-                      'Secure your account',
-                      style: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.w700,
-                        color: AppTheme.textWhite,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      'Create a strong password to keep your pingtrails and location data safe.',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: AppTheme.textGray.withOpacity(0.8),
-                        height: 1.4,
-                      ),
-                    ),
-
-                    const SizedBox(height: 32),
-
                     // Current Password
                     const Text(
                       'Current Password',
@@ -169,11 +151,13 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                         fillColor: AppTheme.cardBackground,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: const BorderSide(color: AppTheme.borderColor),
+                          borderSide:
+                              const BorderSide(color: AppTheme.borderColor),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: const BorderSide(color: AppTheme.borderColor),
+                          borderSide:
+                              const BorderSide(color: AppTheme.borderColor),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
@@ -192,7 +176,8 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                           ),
                           onPressed: () {
                             setState(() {
-                              _obscureCurrentPassword = !_obscureCurrentPassword;
+                              _obscureCurrentPassword =
+                                  !_obscureCurrentPassword;
                             });
                           },
                         ),
@@ -245,11 +230,13 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                         fillColor: AppTheme.cardBackground,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: const BorderSide(color: AppTheme.borderColor),
+                          borderSide:
+                              const BorderSide(color: AppTheme.borderColor),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: const BorderSide(color: AppTheme.borderColor),
+                          borderSide:
+                              const BorderSide(color: AppTheme.borderColor),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
@@ -304,11 +291,13 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                         fillColor: AppTheme.cardBackground,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: const BorderSide(color: AppTheme.borderColor),
+                          borderSide:
+                              const BorderSide(color: AppTheme.borderColor),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: const BorderSide(color: AppTheme.borderColor),
+                          borderSide:
+                              const BorderSide(color: AppTheme.borderColor),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
@@ -327,7 +316,8 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                           ),
                           onPressed: () {
                             setState(() {
-                              _obscureConfirmPassword = !_obscureConfirmPassword;
+                              _obscureConfirmPassword =
+                                  !_obscureConfirmPassword;
                             });
                           },
                         ),
@@ -443,9 +433,8 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
           text,
           style: TextStyle(
             fontSize: 15,
-            color: met
-                ? AppTheme.textWhite
-                : AppTheme.textGray.withOpacity(0.7),
+            color:
+                met ? AppTheme.textWhite : AppTheme.textGray.withOpacity(0.7),
             fontWeight: met ? FontWeight.w500 : FontWeight.w400,
           ),
         ),
