@@ -206,6 +206,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   children: [
                     Expanded(
                       child: TextField(
+                        style: const TextStyle(color: Colors.black),
                         controller: _controller,
                         decoration: InputDecoration(
                           hintText: "Type a message",
