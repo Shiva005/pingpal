@@ -1,50 +1,41 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
-
-    // Firebase Google Services plugin ✅
-    id("com.google.gms.google-services")
-
-    // Flutter plugin (must be last)
     id("dev.flutter.flutter-gradle-plugin")
+    id("com.google.gms.google-services")
 }
 
 android {
     namespace = "com.example.pingpal"
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    compileSdk = 36
+
+    // Required for Firebase, Maps, Geolocator
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
 
     defaultConfig {
         applicationId = "com.example.pingpal"
-
-        // 🔴 Firebase requires minSdk 21
         minSdk = flutter.minSdkVersion
+        targetSdk = 36
 
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
-
-        multiDexEnabled = true
+        versionCode = 1
+        versionName = "1.0"
     }
+
 
     buildTypes {
         release {
             signingConfig = signingConfigs.getByName("debug")
         }
     }
-}
-
-dependencies {
-    implementation("androidx.multidex:multidex:2.0.1")
 }
 
 flutter {
